@@ -1,0 +1,18 @@
+
+.title{
+    font-weight: bold;
+    margin: 20px 0 0 20px;
+}
+.addPost {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.addPost textarea{
+    height: 50px;
+}
+
+.myPosts {
+    padding: 10px;
+}
+

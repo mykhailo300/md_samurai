@@ -1,0 +1,50 @@
+.nav {
+  grid-area: n;
+  background-color: #2b3f4f;
+  
+  width: 100%;
+}
+
+.item a{
+  color: #b0c4d4;
+  text-decoration: none;
+}
+
+.item a.activeLink{
+  color: #ffffff;
+}
+
+.nav_text{
+  padding-left:20px;
+  padding: 15px;
+}
+.friends{
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.friends span{
+  flex: 0 0 100%;
+  color: aliceblue;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: lighter;
+}
+.friends a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.friends div{
+  flex: 0 0 100%;
+  margin: 0px 5px 5px 14px;
+}
+
+.friends img {
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: auto;
+}

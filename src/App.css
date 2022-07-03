@@ -1,0 +1,25 @@
+.app-wrapper {
+    display: grid;
+
+    grid-template-areas:
+    "h h"
+    "n c";
+    grid-template-columns: 2fr 11fr;
+    grid-template-rows: 60px 1fr;
+    grid-gap: 0;
+
+    background-color: #ecf0f1;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+body {
+    background-color: rgb(69, 69, 117);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.app-wrapper-content {
+    grid-area: c;
+}

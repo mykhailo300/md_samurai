@@ -1,0 +1,60 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialogsItems img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dialogsItems a {
+    height: 50px;
+    text-decoration: none;
+    color: #2b3f4f;
+    margin-top: 5px;
+    display: flex;
+}
+
+.dialogsItems a.activeLink {
+    color: #b0c4d4;
+}
+
+.dialogsItems a div {
+    margin: auto auto auto 0;
+}
+
+.messages {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    height: 50px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message div {
+    margin: auto auto auto 0;
+}
+
+.messages textarea{
+    width: 200px;
+    height: 50px;
+}
+
+.messages button{
+    width: 100px;
+    margin-top: 5px;
+}

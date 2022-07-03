@@ -1,0 +1,40 @@
+.header {
+  grid-area: h;
+  display: grid;
+  grid-template-columns: 2fr 7fr 4fr;
+  grid-template-areas:
+    "l m a"
+}
+
+.header .logo{
+  background-color: #3498db;
+  grid-area: l;
+  display: flex;
+  justify-content: center;
+}
+
+.header .menu{
+  grid-area: m;
+  background-color: #ffffff ;
+}
+.header .logo img {
+  width: 60px;
+}
+
+.authBlock a{
+  color: black;
+  text-decoration: none;
+}
+
+.authBlock {
+  grid-area: a;
+  background-color: #ffffff ;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 20px;
+}
+
+.singOut{
+  padding-left: 30px;
+}
+
