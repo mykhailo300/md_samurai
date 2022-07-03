@@ -1,0 +1,13 @@
+.selectedPage{
+    font-weight: bold;
+}
+
+.pagesContainer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagesContainer span {
+    margin-right: 10px;
+    cursor: pointer;
+}
