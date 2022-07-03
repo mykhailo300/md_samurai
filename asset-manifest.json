@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/md_samurai/static/css/main.3722c64e.css",
+    "main.js": "/md_samurai/static/js/main.fcde8d45.js",
+    "static/css/687.791cc4de.chunk.css": "/md_samurai/static/css/687.791cc4de.chunk.css",
+    "static/js/687.56bcd04c.chunk.js": "/md_samurai/static/js/687.56bcd04c.chunk.js",
+    "static/css/668.3d196d2f.chunk.css": "/md_samurai/static/css/668.3d196d2f.chunk.css",
+    "static/js/668.4ea73201.chunk.js": "/md_samurai/static/js/668.4ea73201.chunk.js",
+    "static/js/787.45875ad3.chunk.js": "/md_samurai/static/js/787.45875ad3.chunk.js",
+    "static/media/notLookingForAJob.jpg": "/md_samurai/static/media/notLookingForAJob.241d79a1457e74100e24.jpg",
+    "static/media/loader.gif": "/md_samurai/static/media/loader.a1a996746e5e48352c81.gif",
+    "static/media/lookingForAJob.jpg": "/md_samurai/static/media/lookingForAJob.8232d9f1835ee2927882.jpg",
+    "static/media/user.png": "/md_samurai/static/media/user.a9136072d073801df253.png",
+    "index.html": "/md_samurai/index.html",
+    "main.3722c64e.css.map": "/md_samurai/static/css/main.3722c64e.css.map",
+    "main.fcde8d45.js.map": "/md_samurai/static/js/main.fcde8d45.js.map",
+    "687.791cc4de.chunk.css.map": "/md_samurai/static/css/687.791cc4de.chunk.css.map",
+    "687.56bcd04c.chunk.js.map": "/md_samurai/static/js/687.56bcd04c.chunk.js.map",
+    "668.3d196d2f.chunk.css.map": "/md_samurai/static/css/668.3d196d2f.chunk.css.map",
+    "668.4ea73201.chunk.js.map": "/md_samurai/static/js/668.4ea73201.chunk.js.map",
+    "787.45875ad3.chunk.js.map": "/md_samurai/static/js/787.45875ad3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3722c64e.css",
+    "static/js/main.fcde8d45.js"
+  ]
+}
