@@ -4,5 +4,9 @@ export const required = (value) => {
 }
 
 export const maxLengthCreator = (maxLength) => (value) => {
-    return (value.length > maxLength) ? `Max length is ${maxLength}` : undefined;
+    if(value) {
+        return (value.length > maxLength) ? `Max length is ${maxLength}` : undefined;
+    } else{
+        return undefined;
+    }
 }

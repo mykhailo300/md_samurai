@@ -15,7 +15,8 @@ const ProfileStatus = (props) => {
     }
 
     let deActivateEditMode = () => {
-        setEditMode(false)
+        setEditMode(false);
+        props.updateStatus(status);
     }
 
     let onChangeStatus = (e) => {
@@ -26,12 +27,12 @@ const ProfileStatus = (props) => {
         <div className={s.statusWrapper}>
             {!editMode &&
                 <div>
-                    <span onDoubleClick={activateEditMode}>{props.status || "'Status'"}</span>
+                    <span onDoubleClick={activateEditMode}>Status: {props.status || ""}</span>
                 </div>}
             {editMode &&
                 <div>
                     <input onChange={onChangeStatus}
-                           autoFocus={true} onBlur={deActivateEditMode} value={status}
+                           autoFocus={true} onBlur={deActivateEditMode} value={[status]}
                            className={s.inputStatus} type="text"/>
                 </div>}
         </div>

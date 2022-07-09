@@ -1,5 +1,5 @@
 import './App.css';
-import {HashRouter, Route} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -10,7 +10,7 @@ import SignIn from "./components/SignIn/SignIn";
 import SignOut from "./components/SignOut/SignOut";
 import React from "react"
 import {compose} from "redux";
-import {withRouter} from "react-router";
+import {Redirect, withRouter} from "react-router";
 import {connect, Provider} from "react-redux";
 import {initializateApp} from "./redux/appReducer";
 import PreLoader from "./components/common/PreLoader/PreLoader";
@@ -19,16 +19,25 @@ import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'), );
-
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'),);
 
 
 class App extends React.Component {
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert("Some error occured");
+    }
     componentDidMount() {
         this.props.initializateApp();
+
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+
+    }
+
     render() {
-        if(!this.props.initialized) {
+        if (!this.props.initialized) {
             return <PreLoader isFetching={true}/>
         }
         return (
@@ -36,14 +45,16 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <NavbarContainer/>
                 <div className="app-wrapper-content">
+                    <Route path="/" render={() => <Redirect to={"/profile"}/>}/>
                     <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)}/>
                     <Route path="/dialogs/" render={withSuspense(DialogsContainer)}/>
-                    <Route path="/users" render={()=> <UsersContainer/>}/>
-                    <Route path="/news" render={()=> <News/>}/>
-                    <Route path="/signIn" render={()=> <SignIn/>}/>
-                    <Route path="/signOut" render={()=> <SignOut/>}/>
-                    <Route path="/music" render={()=> <Music/>}/>
-                    <Route path="/settings" render={()=> <Settings/>}/>
+                    <Route path="/users" render={() => <UsersContainer/>}/>
+                    <Route path="/news" render={() => <News/>}/>
+                    <Route path="/signIn" render={() => <SignIn/>}/>
+                    <Route path="/signOut" render={() => <SignOut/>}/>
+                    <Route path="/music" render={() => <Music/>}/>
+                    <Route path="/settings" render={() => <Settings/>}/>
+
                 </div>
             </div>
         )

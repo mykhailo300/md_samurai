@@ -1,43 +1,11 @@
 .profileInfo *{
-  margin: 10px;
+  margin: 5px;
 }
-.background {
-  height: 300px;
-  display: block;
-  margin: 0 auto;
-  width: auto;
-}
-
-.fullName{
-  font-weight: bolder;
-  font-size: 24px;
-}
-
-.aboutMe{
-  font-size: 13px;
-}
-
-.lookingForAJob{
+.profileInfo{
   display: flex;
   flex-direction: column;
 }
-.lookingForAJobText{
-  margin: 5px 0 0 0;
-  font-size: 12px;
-}
-.lookingForAJobImage{
-  margin: 0;
-  width: 80px;
-}
 
-.contacts{
-  margin: 0;
-}
-
-.socialNetworks{
-  font-weight: bolder;
-}
-
-.avaAndStatus{
+.formFiels {
   display: flex;
 }

@@ -10,14 +10,14 @@ import s from "./../common/FormsControls/FormsControls.module.css"
 
 const maxLength30 = maxLengthCreator(30);
 
-const SignInForm = ({handleSubmit, error}) => {
+const SignInForm = ({handleSubmit, error, ...props}) => {
     return (
-        <form action="" onSubmit={handleSubmit}>
+        <form action="?" onSubmit={handleSubmit} method={"POST"}>
             <div>
                 <Field component={Input} placeholder="Email" name={"email"} validate={[required, maxLength30]}/>
             </div>
             <div>
-                <Field component={Input} placeholder="Password" name={"password"} validate={[required, maxLength30]}/>
+                <Field type = "password" component={Input} placeholder="Password" name={"password"} validate={[required, maxLength30]}/>
             </div>
             <div>
                 <Field component={Input} type="checkbox" name={"rememberMe"}/>Remember me
@@ -25,6 +25,7 @@ const SignInForm = ({handleSubmit, error}) => {
             {error && <div className={s.errorField}>
                 {error}
             </div>}
+            <img src={props.url} alt=""/>
             <div>
                 <button>Sign in</button>
             </div>
@@ -53,7 +54,8 @@ const SignIn = (props) => {
 
 let mapStateToProps = (state) => {
     return {
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        captchaUrl: state.auth.captchaUrl
     }
 }
 

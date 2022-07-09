@@ -36,7 +36,7 @@ class ProfileStatus extends React.Component {
             <div className={s.statusWrapper}>
                 {!this.state.editMode &&
                     <div>
-                        <span onDoubleClick={this.activateEditMode}>{this.props.status || "'Status'"}</span>
+                        <span onDoubleClick={this.activateEditMode}>Status: {this.props.status || "'Status'"}</span>
                     </div>}
                 {this.state.editMode &&
                     <div>
