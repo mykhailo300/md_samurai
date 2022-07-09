@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, HashRouter, Route} from "react-router-dom";
+import {HashRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -24,7 +24,7 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 class App extends React.Component {
     catchAllUnhandledErrors = (promiseRejectionEvent) => {
-        alert("Some error occured");
+        console.log("Some error occured");
     }
     componentDidMount() {
         this.props.initializateApp();
