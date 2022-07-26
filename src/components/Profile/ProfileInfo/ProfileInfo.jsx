@@ -3,7 +3,6 @@ import PreLoader from "../../common/PreLoader/PreLoader";
 import React, {useState} from "react";
 import ProfileInfoData from "./ProfileInfoData/ProfileInfoData";
 import ProfileInfoDataForm from "./ProfileInfoDataForm/ProfileInfoDataForm";
-import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 
 const ProfileInfo = ({profile, saveProfileInfo, isOwner, ...props}) => {
     let [editMode, setEditMode] = useState(false);
@@ -24,8 +23,6 @@ const ProfileInfo = ({profile, saveProfileInfo, isOwner, ...props}) => {
                 <ProfileInfoDataForm initialValues = {profile} onSubmit = {onSubmit} profile ={profile}/> :
                 <ProfileInfoData goToEditMode={() => {setEditMode(true)}} profile = {profile} isOwner = {isOwner}/>
             }
-            {/*<ProfileDescription {...props}/>
-            <Contacts {...props}/>*/}
         </div>
     );
 };

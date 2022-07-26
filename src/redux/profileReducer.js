@@ -46,31 +46,29 @@ export const setProfilePage = (profile) => ({type: SET_PROFILE_PAGE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
-
-
 export const getProfileInfo = (userId) => {
     return async (dispatch) => {
         let response = await profileAPI.getProfileInfo(userId);
-        dispatch(setProfilePage(response.data));
+        if(response.status === 200) {
+            dispatch(setProfilePage(response.data));
+        }
     }
 }
 
 export const getUserStatus = (userId) => {
     return async (dispatch) => {
-        let response = await profileAPI.getStatus(userId)
-        dispatch(setStatus(response.data));
+        let response = await profileAPI.getStatus(userId);
+        if(response.status === 200) {
+            dispatch(setStatus(response.statusText));
+        }
     }
 }
 
 export const updateUserStatus = (status) => {
     return async (dispatch) => {
-        try{
-            let response = await profileAPI.updateStatus(status)
-            if (response.data.resultCode === 0) {
-                dispatch(setStatus(status));
-            }
-        } catch (error) {
-            debugger;
+        let response = await profileAPI.updateStatus(status)
+        if (response.status === 200) {
+            dispatch(setStatus(status));
         }
 
     }
@@ -78,7 +76,7 @@ export const updateUserStatus = (status) => {
 export const savePhoto = (photoFile) => {
     return async (dispatch) => {
         let response = await profileAPI.savePhoto(photoFile)
-        if (response.data.resultCode === 0) {
+        if (response.status === 200) {
             dispatch(savePhotoSuccess(response.data.data.photos));
         }
     }
@@ -88,10 +86,10 @@ export const saveProfileInfo = (profileInfo) => async (dispatch, getState) => {
     const userId = getState().auth.userId;
     profileInfo.userId = userId;
     const response = await profileAPI.saveProfileInfo(profileInfo);
-    if (response.data.resultCode === 0) {
+    if (response.status === 200) {
         dispatch(getProfileInfo(userId));
     } else {
-        dispatch(stopSubmit("saveProfile", {_error: response.data.messages[0] }));
+        dispatch(stopSubmit("saveProfile", {_error: response.data.messages[0]}));
         return Promise.reject(response.data.messages[0]);
     }
 }

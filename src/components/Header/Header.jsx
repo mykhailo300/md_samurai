@@ -19,7 +19,7 @@ const Header = (props) => {
 				<img alt = "logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/480px-Android_O_Preview_Logo.png"></img>
 			</div>
 			<div className={s.menu}>
-				Menu
+
 			</div>
 			<div className={s.authBlock}>
 				<SignInOut {...props}/>

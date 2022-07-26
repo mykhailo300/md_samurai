@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import profilePhoto from "../../assets/images/user.png";
 import React from "react";
 
-export const User = ({user, unFollow, follow, isDisabledButtons, key}) => {
+export const User = ({user, unFollow, follow, isDisabledButtons}) => {
     return(
         <div className={s.user}>
             <div>
@@ -29,8 +29,7 @@ export const User = ({user, unFollow, follow, isDisabledButtons, key}) => {
                     <div>{user.status}</div>
                 </div>
                 <div>
-                    <div>{"user.location.country"}</div>
-                    <div>{"user.location.city"}</div>
+
                 </div>
             </div>
         </div>

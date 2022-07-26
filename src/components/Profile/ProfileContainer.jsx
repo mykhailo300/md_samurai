@@ -35,7 +35,6 @@ class ProfileContainer extends React.Component {
             this.refreshProfile()
         }
     }
-
     render() {
         return <Profile {...this.props} isOwner = {!this.props.match.params.userId}/>
     }

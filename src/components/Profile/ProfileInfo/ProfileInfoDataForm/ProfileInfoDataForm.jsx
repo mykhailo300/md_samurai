@@ -1,6 +1,6 @@
 import {reduxForm} from "redux-form";
 import s from "./../ProfileInfoData/ProfileInfoData.module.css"
-import SpanInputCreator from "../ProfileDescriptionForm/SpanInputCreator";
+import SpanInputCreator from "../SpanInputCreator";
 import React from "react";
 import {Textarea} from "../../../common/FormsControls/FormsControls";
 

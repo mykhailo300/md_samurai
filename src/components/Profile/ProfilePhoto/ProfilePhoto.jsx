@@ -6,7 +6,7 @@ import React from "react";
 
 const ProfilePhoto = (props) => {
     let onChangeProfilePhoto = (e) => {
-        debugger;
+
         if(e.target.files) {
             props.savePhoto(e.target.files[0]);
         }

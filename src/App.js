@@ -10,30 +10,23 @@ import SignIn from "./components/SignIn/SignIn";
 import SignOut from "./components/SignOut/SignOut";
 import React from "react"
 import {compose} from "redux";
-import {Redirect, withRouter} from "react-router";
+import {withRouter} from "react-router";
 import {connect, Provider} from "react-redux";
-import {initializateApp} from "./redux/appReducer";
 import PreLoader from "./components/common/PreLoader/PreLoader";
 import store from "./redux/redux-store";
-
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import {initializeApp} from "./redux/appReducer";
+/*
 import {withSuspense} from "./hoc/withSuspense";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'),);
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'),);*/
 
 
 class App extends React.Component {
-    catchAllUnhandledErrors = (promiseRejectionEvent) => {
-        console.log("Some error occured");
-    }
     componentDidMount() {
-        this.props.initializateApp();
-
-        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
-    }
-    componentWillUnmount() {
-        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
-
+        this.props.initializeApp();
     }
 
     render() {
@@ -45,16 +38,14 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <NavbarContainer/>
                 <div className="app-wrapper-content">
-                    <Route path="/" render={() => <Redirect to={"/profile"}/>}/>
-                    <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)}/>
-                    <Route path="/dialogs/" render={withSuspense(DialogsContainer)}/>
+                    <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+                    <Route path="/dialogs/" render={() => <DialogsContainer/>}/>
                     <Route path="/users" render={() => <UsersContainer/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/signIn" render={() => <SignIn/>}/>
                     <Route path="/signOut" render={() => <SignOut/>}/>
                     <Route path="/music" render={() => <Music/>}/>
                     <Route path="/settings" render={() => <Settings/>}/>
-
                 </div>
             </div>
         )
@@ -68,11 +59,11 @@ let mapStateToProps = (state) => {
 }
 let AppContainer = compose(
     withRouter,
-    connect(mapStateToProps, {initializateApp})
+    connect(mapStateToProps, {initializeApp})
 )(App)
 
 let SamuraiJSApp = () => {
-    return <HashRouter>
+        return <HashRouter basename={"/"}>
         <Provider store={store}>
             <AppContainer/>
         </Provider>

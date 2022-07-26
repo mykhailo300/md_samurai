@@ -12,14 +12,14 @@ const ProfileInfoData = ({isOwner, profile, goToEditMode}) => {
                     {profile.fullName}
                 </div>
                 <div className={s.aboutMe}>
-                    <span>About me: {profile.aboutMe}</span>
+                    <span className={s.usualSpan}>About me: {profile.aboutMe}</span>
                 </div>
 
                 <div className={s.lookingForAJob}>
                     <img src={profile.lookingForAJob ? lookingForAJob : notLookingForAJob}
                          className={s.lookingForAJobImage} alt=""/>
                     <span className={s.lookingForAJobText}>
-                    {profile.lookingForAJob && profile.lookingForAJobDescription}
+                        My professional skills: {profile.lookingForAJob && profile.lookingForAJobDescription}
                 </span>
                 </div>
             </div>

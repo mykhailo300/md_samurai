@@ -12,7 +12,7 @@ const maxLength30 = maxLengthCreator(30);
 
 const SignInForm = ({handleSubmit, error, ...props}) => {
     return (
-        <form action="?" onSubmit={handleSubmit} method={"POST"}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field component={Input} placeholder="Email" name={"email"} validate={[required, maxLength30]}/>
             </div>
@@ -25,7 +25,6 @@ const SignInForm = ({handleSubmit, error, ...props}) => {
             {error && <div className={s.errorField}>
                 {error}
             </div>}
-            <img src={props.url} alt=""/>
             <div>
                 <button>Sign in</button>
             </div>
@@ -42,12 +41,12 @@ const SignIn = (props) => {
         let {email, password, rememberMe} = formData;
         props.loginUser(email, password, rememberMe);
     }
-
     if(props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
-    return <div>
+    return <div style={{textAlign: "center" } }>
         <h1>Sign in</h1>
+        <h5>if you're first on this site, use email: "free@samuraijs.com" password: "free"</h5>
         <SingInReduxForm onSubmit={onSubmit}/>
     </div>
 }
@@ -55,7 +54,6 @@ const SignIn = (props) => {
 let mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
-        captchaUrl: state.auth.captchaUrl
     }
 }
 
