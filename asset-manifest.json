@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/md_samurai/static/css/main.fc0a0efb.css",
-    "main.js": "/md_samurai/static/js/main.6229f951.js",
+    "main.js": "/md_samurai/static/js/main.a2d72ce4.js",
     "static/js/787.45875ad3.chunk.js": "/md_samurai/static/js/787.45875ad3.chunk.js",
     "static/media/notLookingForAJob.jpg": "/md_samurai/static/media/notLookingForAJob.241d79a1457e74100e24.jpg",
     "static/media/loader.gif": "/md_samurai/static/media/loader.a1a996746e5e48352c81.gif",
@@ -9,11 +9,11 @@
     "static/media/user.png": "/md_samurai/static/media/user.a9136072d073801df253.png",
     "index.html": "/md_samurai/index.html",
     "main.fc0a0efb.css.map": "/md_samurai/static/css/main.fc0a0efb.css.map",
-    "main.6229f951.js.map": "/md_samurai/static/js/main.6229f951.js.map",
+    "main.a2d72ce4.js.map": "/md_samurai/static/js/main.a2d72ce4.js.map",
     "787.45875ad3.chunk.js.map": "/md_samurai/static/js/787.45875ad3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc0a0efb.css",
-    "static/js/main.6229f951.js"
+    "static/js/main.a2d72ce4.js"
   ]
 }
